@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wired | Laptops, headphones and earbuds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top bar: logo, search, cart button -->
+  <header class="topbar">
+    <a class="logo" href="#">Wired</a>
+    <input id="search" type="search" placeholder="Search laptops, headphones, earbuds" aria-label="Search products">
+    <button id="cartBtn" class="cart-btn" aria-label="Open cart">Cart <span id="cartCount">0</span></button>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Laptops that keep up.<br>Sound that stays with you.</h1>
+    <p>Genuine electronics, clear prices, delivery across the country.</p>
+    <a href="#shop" class="btn">Shop the range</a>
+  </section>
+
+  <!-- Products -->
+  <main id="shop">
+    <div class="toolbar">
+      <div id="filters" class="filters">
+        <button class="chip active" data-cat="all">All</button>
+        <button class="chip" data-cat="laptops">Laptops</button>
+        <button class="chip" data-cat="headphones">Headphones</button>
+        <button class="chip" data-cat="earbuds">Earbuds</button>
+        <button class="chip" data-cat="accessories">Accessories</button>
+      </div>
+      <label class="sort">Sort by
+        <select id="sort">
+          <option value="featured">Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="name">Name</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="empty" hidden>No products match. Try another search or category.</p>
+  </main>
+
+  <!-- Cart drawer -->
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <h2>Your cart</h2>
+      <button id="closeCart" class="link-btn">Close</button>
+    </div>
+    <ul id="cartItems" class="cart-items"></ul>
+    <div class="drawer-foot">
+      <div class="total"><span>Total</span><strong id="cartTotal">KES 0</strong></div>
+      <button id="checkout" class="btn full">Place order</button>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay" hidden></div>
+  <div id="toast" class="toast" role="status"></div>
+
+  <footer>
+    <p>Wired. All prices in Kenyan shillings (KES).</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
